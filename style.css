@@ -1,0 +1,633 @@
+/* ===========================================
+   ========== ESTILOS GERAIS ==========
+=========================================== */
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background-color: #000;
+  color: white;
+}
+
+
+
+/* ===========================================
+   ========== HERO SECTION ==========
+=========================================== */
+.hero {
+  position: relative;
+  height: 100vh;
+  background: url('data_center_roxo.png') no-repeat center center/cover;
+  background-color: black ;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20%;
+  background: linear-gradient(to bottom, transparent, #000);
+  pointer-events: none;
+}
+
+/* ===========================================
+   ========== NAVBAR ==========
+=========================================== */
+.navbar {
+  background-color: #000 !important;
+}
+
+.navbar .navbar-brand,
+.navbar .nav-link {
+  color: white !important;
+}
+
+.navbar .nav-link:hover,
+.navbar .navbar-brand:hover {
+  color: #d9b3ff !important;
+  text-shadow: 0 0 5px #8e44ad;
+}
+
+.navbar-toggler {
+  border-color: white;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* ===========================================
+   ========== TOPO / HEADER-HERO ==========
+=========================================== */
+.header-hero {
+  min-height: 100vh;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: start;
+}
+
+.header-title {
+  font-size: 40px !important;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  color: white;
+  line-height: 1.2;
+}
+
+.header-destaque {
+  background-color: white;
+  font-size: 40px !important;
+  font-weight: 700;
+  display: inline-block;
+  padding: 10px;
+  color: black;
+  
+}
+
+@media (min-width: 769px){
+  .header-hero div{
+    padding-left: 125px;
+  }
+  .header-title{
+    font-size: 80px !important;
+  }
+  .header-destaque{
+    font-size: 80px !important;
+  }
+}
+
+
+.header-hero p{
+  font-weight: 300 !important;
+  font-family: 'Inter', sans-serif !important;
+  font-size: 18px;
+}
+
+@media (min-width: 769px) {
+  .header-hero {
+    padding-top: 80px;
+  }
+
+  .header-title,
+  .header-destaque {
+    font-size: 3.5vw;
+  }
+}
+
+/* ===========================================
+   ========== INTRODUÇÃO / ANIMAÇÃO ==========
+=========================================== */
+#intro-animation {
+  position: fixed;
+  z-index: 9999;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #0c0013;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
+#intro-animation.fade-out {
+  opacity: 0;
+}
+
+.intro-text {
+  font-size: 4vw;
+  color: white;
+  text-align: center;
+  animation: typing 3s steps(30, end);
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid white;
+  width: 0;
+}
+
+.sumir,
+.sumir-1 {
+  opacity: 0;
+  filter: blur(15px);
+  transform: translateX(-100%);
+  transition: all 3s;
+}
+
+.sumir-1 {
+  transition-delay: 1.5s;
+}
+
+.aparecer {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+}
+
+@keyframes typing {
+  to { width: 100%; }
+}
+
+@keyframes flicker {
+  0% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+
+/* Linhas decorativas */
+.tech-lines {
+  width: 80%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #8e2de2, #4a00e0, transparent);
+  animation: flicker 1.5s infinite alternate;
+  margin-bottom: 20px;
+}
+
+/* ===========================================
+   ========== SOBRE NÓS ==========
+=========================================== */
+.sobre-nos {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: black;
+  color: #fff;
+  align-items: center;
+}
+
+.sobre-nos .titulo {
+  font-family: "Special Gothic", sans-serif;
+  text-align: center;
+  font-weight: 700;
+  font-size: 48px !important;
+}
+
+.sobre-nos .container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  padding: 20px;
+  border-bottom: 2px solid #8e44ad;
+}
+
+
+
+@media (min-width: 769px){
+  .sobre-nos .container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.sobre-nos .container h1 {
+  font-size: 36;
+  color: #fff;
+  font-family: "Special Gothic", sans-serif;
+  font-weight: 400;
+  padding: 0 10px;
+  text-align: left;
+}
+
+.sobre-nos p {
+  font-size: 18px;
+  color: #808080;
+  font-family: "Special Gothic", sans-serif;
+  font-weight: 100;
+  padding: 2px 10px;
+  text-align: left;
+}
+
+.sobre-nos .container img {
+  max-width: 100%;
+}
+
+.sobre-nos .hero {
+  width: 100vw;
+  height: 60vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.sobre-nos .hero-video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+.mascara {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 30%; /* ajusta a altura do gradiente no topo */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent);
+  pointer-events: none; /* deixa o vídeo interativo mesmo com o overlay por cima */
+}
+
+.sobre-nos .hero-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.sobre-nos .hero-content h1 {
+  font-size: 2.5rem;
+}
+
+/* ===========================================
+   ========== SERVIÇOS / CARDS ==========
+=========================================== */
+.meusServ {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  justify-items: center;
+  align-items: center;
+  height: 100vh;
+}
+
+@media (min-width: 768px) {
+  .meusServ {
+    grid-template-columns: repeat(4, 0.5fr);
+  }
+}
+
+.card {
+  background: linear-gradient(135deg, #120018, #3a003f);
+  border: 2px solid #9a00a3;
+  border-radius: 20px;
+  color: white;
+  padding: 2rem 1.5rem;
+  max-width: 300px;
+  width: 98%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6), 0 0 0 5px #0a000e;
+  transform: perspective(1000px) rotateX(4deg);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border 0.4s ease;
+  text-align: center;
+}
+
+.card:hover {
+  transform: perspective(1000px) rotateX(0deg) translateY(-6px);
+  box-shadow: 0 25px 40px rgba(0, 0, 0, 0.8), 0 0 0 5px #0a0a0a, 0 0 15px #a259ff;
+  border: 2px solid #c084fc;
+}
+
+.card i {
+  font-size: 2rem;
+  color: #a259ff;
+  margin-bottom: 1rem;
+}
+
+.card p {
+  margin: 1rem 0;
+  font-size: 0.95rem;
+  color: #e0e0e0;
+}
+
+.cardtext {
+  width: 30px;
+  height: 40px;
+}
+
+/* ===========================================
+   ========== BOTÕES ==========
+=========================================== */
+
+.botoes,
+.BotaoContato, .BotaoServico  {
+  background: #8e44ad;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+
+.botoes {
+  display: inline-flex;
+  align-items: center;
+  border: 2px solid white;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 12px 18px;
+  border-radius: 50px;
+  box-shadow: 0 0 15px #6f42c1;
+}
+
+.botoes:hover {
+  background: #9b59b6;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #a259ff;
+}
+
+.botoes .arrow {
+  font-size: 1.2rem;
+}
+
+.BotaoContato {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 12px 18px;
+  border-radius: 50px;
+  box-shadow: 0 0 15px #6f42c1;
+  z-index: 999;
+}
+
+.BotaoServico {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  padding: 12px 18px;
+  border-radius: 50px;
+  box-shadow: 0 0 15px #6f42c1;
+  z-index: 999;
+}
+/* ===========================================
+   ========== CONTATO ==========
+=========================================== */
+.contato {
+  height: 100vh;
+}
+
+/* ===========================================
+   ========== RODAPÉ ==========
+=========================================== */
+.site-footer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body, footer {
+  margin: 0;
+  padding: 0;
+}
+
+
+footer .container {
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: auto;
+  gap: 0;
+  
+}
+
+footer .container .profile {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 25%;
+}
+
+footer .container .link-container {
+  width: 75%;
+  display: flex;
+  gap: 0rem;
+
+}
+
+@media screen and (min-width: 769px) {
+  footer .container {
+    padding: 4rem 0;
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: 100%;
+    gap: 2rem;
+    justify-content: space-between;
+  }
+
+  footer .container .profile {
+    width: 25%;
+  }
+
+  footer .container .link-container {
+    width: 75%;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+
+footer .container .link-container .informacao,
+footer .container .link-container .Servicos,
+footer .container .link-container .navecacao {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 30%;
+}
+
+
+footer .link-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+footer .link-container a {
+  text-decoration: none;
+}
+
+footer .container .profile .logo {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+footer .container .profile .logo img {
+  width: 50px;
+  height: 50px;
+}
+
+footer .container .profile .logo a {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+}
+
+footer .container .profile p {
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+
+footer .container .profile .social-media-container {
+  display: flex;
+  gap: 8px;
+}
+
+footer .container .profile .social-media-container .social-media {
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  padding: 6px;
+  border-radius: 50%;
+  background-color: #191919;
+  transition: transform 1s linear;
+}
+
+footer .container .profile .social-media-container .social-media:hover {
+  transform: rotateY(360deg);
+}
+
+footer .container .link-container .informacao h1,
+footer .container .link-container .Servicos h1,
+footer .container .link-container .navecacao h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+footer .container .link-container .informacao ul,
+footer .container .link-container .Servicos ul,
+footer .container .link-container .navecacao ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+footer .container .link-container .informacao ul li,
+footer .container .link-container .Servicos ul li,
+footer .container .link-container .navecacao ul li {
+  cursor: pointer;
+}
+
+footer .container .link-container .informacao ul li::after,
+footer .container .link-container .Servicos ul li::after,
+footer .container .link-container .navecacao ul li::after {
+  content: "";
+  display: block;
+  border-bottom: 3px solid #fff;
+  width: 40%;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.6s linear;
+  margin-top: 4px;
+}
+
+footer .container .link-container .informacao ul li:hover::after,
+footer .container .link-container .Servicos ul li:hover::after,
+footer .container .link-container .navecacao ul li:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+  transition: transform 0.6s linear;
+}
+
+footer .container .link-container .informacao ul li a,
+footer .container .link-container .Servicos ul li a,
+footer .container .link-container .navecacao ul li a {
+  color: #fff;
+}
+
+@media screen and (max-width: 1536px) {
+  footer .container {
+    gap: 2rem;
+  }
+  footer .container .link-container {
+    gap: 2rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  footer .container .link-container .informacao ul li::after,
+  footer .container .link-container .Servicos ul li::after,
+  footer .container .link-container .navecacao ul li::after {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  footer .container {
+    padding: 1rem 2rem;
+  }
+  footer .container .profile {
+    width: 50%;
+  }
+  footer .container .link-container {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  footer .container .link-container .informacao ul li::after,
+  footer .container .link-container .Servicos ul li::after,
+  footer .container .link-container .navecacao ul li::after {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 610px) {
+  footer .container .profile,
+  footer .container .link-container {
+    width: 100%;
+  }
+
+  footer .container .link-container .informacao,
+  footer .container .link-container .Servicos,
+  footer .container .link-container .navecacao {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  footer .container .link-container .informacao,
+  footer .container .link-container .Servicos,
+  footer .container .link-container .navecacao {
+    width: 50%;
+  }
+}
